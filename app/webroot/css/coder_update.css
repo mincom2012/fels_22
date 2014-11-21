@@ -1,0 +1,22 @@
+.result-header {
+    height:69px; 
+    font-size: 24px;
+    position: relative;
+}
+
+.result-contain {
+    position:absolute;
+    bottom:8px;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.result-icon {
+	font-size:20px;
+}

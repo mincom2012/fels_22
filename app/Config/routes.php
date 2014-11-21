@@ -24,22 +24,31 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
-Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
+    Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */
-Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
-Router::connect('/admin', array('controller' => 'Manager', 'action' => 'index'));
-Router::connect('/admin/:action/*', array('controller' => 'Manager'));
+	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+	Router::connect('/admin', array('controller' => 'Manager', 'action' => 'index'));
+	Router::connect('/admin/:action/*', array('controller' => 'Manager'));
+   
+    Router::connect('/users/signup', array('controller' => 'users', 'action' => 'signup'));
+    Router::connect('/users/login', array('controller' => 'users', 'action' => 'login'));
+    Router::connect("/lessons/:lesson_id", array('controller' => 'lessons', 'action' => 'view_result'), array('pass' => array('lesson_id'), 'lesson_id' => '[0-9]+'));
+    Router::connect("/lessons/:category_id/new", array('controller' => 'lessons', 'action' => 'new_lesson'), array('pass' => array('category_id'), 'category_id' => '[0-9]+'));
+    Router::connect('/categories', array('controller' => 'categories', 'action' => 'list_categories'));
+    Router::connect('/words', array('controller' => 'words', 'action' => 'list_words'));
+    Router::connect('/users/:user_id/home', array('controller' => 'users', 'action' => 'home'), array('pass' => array('user_id'), 'user_id' => '[0-9]+'));
+    Router::connect('/users/:user_id/edit', array('controller' => 'users', 'action' => 'edit'), array('pass' => array('user_id'), 'user_id' => '[0-9]+'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.
  */
-CakePlugin::routes();
+    CakePlugin::routes();
 
 /**
  * Load the CakePHP default routes. Only remove this if you do not want to use
  * the built-in default routes.
  */
-require CAKE . 'Config' . DS . 'routes.php';
+    require CAKE . 'Config' . DS . 'routes.php';
