@@ -76,19 +76,6 @@ class Word extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		),
-		'Word' => array(
-			'className' => 'Word',
-			'foreignKey' => 'word_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
 		)
 	);
 
