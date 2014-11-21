@@ -10,23 +10,12 @@ App::uses('AppModel', 'Model');
  */
 class Word extends AppModel {
 
-    public $primaryKey = "word_id";
 /**
  * Validation rules
  *
  * @var array
  */
 	public $validate = array(
-		'word_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'category_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),

@@ -10,15 +10,13 @@ App::uses('AppModel', 'Model');
  */
 class Lesson extends AppModel {
 
-    public $primaryKey ="lesson_id";
-
 /**
  * Validation rules
  *
  * @var array
  */
 	public $validate = array(
-		'lesson_id' => array(
+		'category_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
