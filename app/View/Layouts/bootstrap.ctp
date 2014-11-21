@@ -42,7 +42,11 @@
 
 
 <?php
-echo $this->Element('navigation');
+if ($this->request->controller == 'Manager') {
+    echo $this->Element('admin_navigation');
+} else {
+    echo $this->Element('navigation');
+}
 ?>
 
 

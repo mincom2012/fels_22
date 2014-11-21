@@ -26,19 +26,6 @@ class Category extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'Category' => array(
-			'className' => 'Category',
-			'foreignKey' => 'category_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
 		'Lesson' => array(
 			'className' => 'Lesson',
 			'foreignKey' => 'category_id',
