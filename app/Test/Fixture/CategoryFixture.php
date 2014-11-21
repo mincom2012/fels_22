@@ -14,8 +14,8 @@ class CategoryFixture extends CakeTestFixture {
 		'category_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false, 'key' => 'primary'),
 		'category_name' => array('type' => 'string', 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'description' => array('type' => 'string', 'null' => true, 'default' => null, 'length' => 500, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
-		'created_date' => array('type' => 'date', 'null' => true, 'default' => null),
-		'updated_date' => array('type' => 'date', 'null' => true, 'default' => null),
+		'created' => array('type' => 'date', 'null' => true, 'default' => null),
+		'modified' => array('type' => 'date', 'null' => true, 'default' => null),
 		'indexes' => array(
 			'PRIMARY' => array('column' => 'category_id', 'unique' => 1),
 			'id' => array('column' => 'category_id', 'unique' => 0)
@@ -33,8 +33,8 @@ class CategoryFixture extends CakeTestFixture {
 			'category_id' => 1,
 			'category_name' => 'Lorem ipsum dolor sit amet',
 			'description' => 'Lorem ipsum dolor sit amet',
-			'created_date' => '2014-11-21',
-			'updated_date' => '2014-11-21'
+			'created' => '2014-11-21',
+			'modified' => '2014-11-21'
 		),
 	);
 

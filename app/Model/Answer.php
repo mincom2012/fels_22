@@ -3,7 +3,6 @@ App::uses('AppModel', 'Model');
 /**
  * Answer Model
  *
- * @property Answer $Answer
  * @property Word $Word
  */
 class Answer extends AppModel {
@@ -14,6 +13,16 @@ class Answer extends AppModel {
  * @var array
  */
 	public $validate = array(
+		'answer' => array(
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 		'is_correct' => array(
 			'boolean' => array(
 				'rule' => array('boolean'),
@@ -52,5 +61,4 @@ class Answer extends AppModel {
 			'order' => ''
 		)
 	);
-
 }

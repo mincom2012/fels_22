@@ -3,7 +3,6 @@ App::uses('AppModel', 'Model');
 /**
  * Word Model
  *
- * @property Word $Word
  * @property Category $Category
  * @property Answer $Answer
  * @property LessonDetail $LessonDetail
@@ -19,7 +18,7 @@ class Word extends AppModel {
 		'category_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'Category do not empty.',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -66,19 +65,6 @@ class Word extends AppModel {
 		),
 		'LessonDetail' => array(
 			'className' => 'LessonDetail',
-			'foreignKey' => 'word_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Word' => array(
-			'className' => 'Word',
 			'foreignKey' => 'word_id',
 			'dependent' => false,
 			'conditions' => '',
