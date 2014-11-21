@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="page-header">
-                <h1><?php echo __('Add Word'); ?></h1>
+                <h1><?php echo __($titlePage); ?></h1>
             </div>
         </div>
     </div>
@@ -29,9 +29,8 @@
         <!-- end col md 3 -->
         <div class="col-md-9">
             <?php
-            $id = $this->data == null ? null : $this->data['Word']['id'];
-            echo $this->Form->create('Word', array('url' => array('controller' => 'Manager', $id))); ?>
-
+            echo $this->Form->create('Word', array('url' => array('controller' => 'Manager', $this->request->data('Word.id')))); ?>
+            <?php //echo $this->Form->hidden('id'); ?>
             <div class="form-group">
                 <?php echo $this->Form->input('word_name', array('class' => 'form-control', 'placeholder' => 'Word Name')); ?>
             </div>
@@ -40,6 +39,23 @@
                 echo $this->Form->input('category_id', array('options' => $categories, 'class' => 'form-control', 'placeholder' => 'Category Id'));
                 ?>
             </div>
+
+
+            <!--Answer-->
+            <div class="form-group">
+                <?php echo $this->Form->input('ListAnswer.0', array('class' => 'form-control', 'placeholder' => 'Word Name')); ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->Form->input('word_name', array('class' => 'form-control', 'placeholder' => 'Word Name')); ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->Form->input('word_name', array('class' => 'form-control', 'placeholder' => 'Word Name')); ?>
+            </div>
+            <div class="form-group">
+                <?php echo $this->Form->input('word_name', array('class' => 'form-control', 'placeholder' => 'Word Name')); ?>
+            </div>
+
+
             <div class="form-group">
                 <?php echo $this->Form->submit(__('Submit'), array('class' => 'btn btn-default')); ?>
             </div>

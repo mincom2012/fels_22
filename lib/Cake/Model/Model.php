@@ -1715,6 +1715,8 @@ class Model extends Object implements CakeEventListener {
 			$options = $validate + $defaults;
 		}
 
+
+
 		if (!empty($options['fieldList'])) {
 			if (!empty($options['fieldList'][$this->alias]) && is_array($options['fieldList'][$this->alias])) {
 				$this->whitelist = $options['fieldList'][$this->alias];
@@ -1762,6 +1764,8 @@ class Model extends Object implements CakeEventListener {
 
 		$db = $this->getDataSource();
 		$now = time();
+
+
 
 		foreach ($dateFields as $updateCol) {
 			if (in_array($updateCol, $fields) || !$this->hasField($updateCol)) {
@@ -1831,8 +1835,7 @@ class Model extends Object implements CakeEventListener {
 
 		if ($count > 0) {
 			$cache = $this->_prepareUpdateFields(array_combine($fields, $values));
-
-			if (!empty($this->id)) {
+           	if (!empty($this->id)) {
 				$this->__safeUpdateMode = true;
 				try {
 					$success = (bool)$db->update($this, $fields, $values);

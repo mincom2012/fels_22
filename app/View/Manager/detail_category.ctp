@@ -3,12 +3,11 @@
     <div class="row">
         <div class="col-md-12">
             <div class="page-header">
-                <h1><?php echo __('Add Category'); ?></h1>
+                <h1><?php
+                    echo __($titlePage); ?></h1>
             </div>
         </div>
     </div>
-
-
     <div class="row">
         <div class="col-md-3">
             <div class="actions">

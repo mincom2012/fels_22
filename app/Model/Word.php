@@ -35,7 +35,7 @@ class Word extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Category' => array(
+        'Category' => array(
 			'className' => 'Category',
 			'foreignKey' => 'category_id',
 			'conditions' => '',
