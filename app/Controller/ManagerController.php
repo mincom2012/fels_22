@@ -83,14 +83,11 @@ class ManagerController extends AppController {
         if ($this->request->is(array('post', 'put'))) {
             if (!$id) {
                 $this->Word->create();
+                $data['Word']['created_date'] = date("Y-m-d H:i:s");
             } else {
                 $data['Word']['id'] = $id;
-                $data['Word']['created_date'] = date("Y-m-d H:i:s");
             }
-//            $data['Answer'][] = array(
-//                'answer' => 'Answer 3',
-//                'is_correct' => 1
-//            );
+
             $data['Word']['updated_date'] = date("Y-m-d H:i:s");
 
             if ($this->Word->saveAssociated($data)) {
@@ -99,12 +96,15 @@ class ManagerController extends AppController {
             } else {
                 $this->Session->setFlash(__('The word could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
             }
+        } else {
+
         }
 
         $titlePage = 'Add Word';
         if ($id) {
             $options = array('conditions' => array('Word.' . $this->Word->primaryKey => $id));
-            $this->request->data = $this->Word->find('first', $options);
+            $word = $this->Word->find('first', $options);
+            $this->request->data = $word;
             $titlePage = 'Edit Word';
         }
 

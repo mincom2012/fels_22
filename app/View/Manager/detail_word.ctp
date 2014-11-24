@@ -19,8 +19,6 @@
                             <li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;List Words'), array('controller' => 'Manager', 'action' => 'viewWord'), array('escape' => false)); ?></li>
                             <li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;List Categories'), array('controller' => 'Manager', 'action' => 'viewCategory'), array('escape' => false)); ?> </li>
                             <li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;New Category'), array('controller' => 'Manager', 'action' => 'detailCategory'), array('escape' => false)); ?> </li>
-                            <li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-list"></span>&nbsp;&nbsp;List Answers'), array('controller' => 'Manager', 'action' => 'viewAnswer'), array('escape' => false)); ?> </li>
-                            <li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;New Answer'), array('controller' => 'Manager', 'action' => 'detailAnswer'), array('escape' => false)); ?> </li>
                         </ul>
                     </div>
                 </div>
@@ -40,23 +38,22 @@
                 ?>
             </div>
 
-
             <!--Answer-->
-            <div class="form-group">
-                <?php echo $this->Form->input('ListAnswer.0', array('class' => 'form-control', 'placeholder' => 'Word Name')); ?>
-            </div>
-            <div class="form-group">
-                <?php echo $this->Form->input('word_name', array('class' => 'form-control', 'placeholder' => 'Word Name')); ?>
-            </div>
-            <div class="form-group">
-                <?php echo $this->Form->input('word_name', array('class' => 'form-control', 'placeholder' => 'Word Name')); ?>
-            </div>
-            <div class="form-group">
-                <?php echo $this->Form->input('word_name', array('class' => 'form-control', 'placeholder' => 'Word Name')); ?>
-            </div>
 
+            <div style="font-weight: bold; font-size: 20px; margin-top: 20px">List Answer</div>
+            <?php for ($i = 0; $i < 4; $i++): ?>
+                <?php echo $this->Form->input('Answer.' . $i . '.answer', array('label' => 'Answer ' . ($i + 1), 'class' => 'form-control', 'placeholder' => 'Answer')); ?>
 
-            <div class="form-group">
+                <?php
+                echo $this->Form->hidden('Answer.' . $i . '.id');
+                $value = $this->request->data != null ? $this->request->data['Answer'][$i]['is_correct'] : 0;
+                $attributes = array('div' => true, 'label' => 'Is answer true', 'type' => 'checkbox', 'options' => array());
+                echo $this->Form->input('Answer.' . $i . '.is_correct', $attributes);
+                ?>
+
+            <?php endfor; ?>
+
+            <div class="form-group" style="margin-top: 10px">
                 <?php echo $this->Form->submit(__('Submit'), array('class' => 'btn btn-default')); ?>
             </div>
 
