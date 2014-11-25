@@ -15,6 +15,7 @@
     echo $this->fetch('meta');
     echo $this->fetch('css');
     echo $this->fetch('script');
+    echo $this->Html->css('customizestyle');
     ?>
 
     <!-- Latest compiled and minified CSS -->
@@ -41,9 +42,15 @@
 <body>
 
 
-<?php
-echo $this->Element('navigation');
-?>
+<?php if ($this->request->controller == 'Manager'): ?>
+
+    <?php echo $this->Element('admin_navigation'); ?>
+
+<?php else: ?>
+
+    <?php echo $this->Element('navigation'); ?>
+
+<?php endif; ?>
 
 
 <div class="container">
