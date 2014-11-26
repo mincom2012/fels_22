@@ -17,6 +17,33 @@
     color: green;
 }
 
-.result-icon {
-	font-size:20px;
+.login .input-group {
+    margin-bottom: 25px;
+}
+
+.login .form-group {
+    margin-top:10px;
+}
+
+.login .signup-link {
+    border-top: 1px solid#888; 
+    padding-top:25px; 
+    font-size:85%;
+}
+
+.login .panel-body {
+    padding-top:30px;
+}
+
+.login .mainbox{
+    margin-top:50px;
+}
+
+.avatar {
+    height: 100px;
+    width: 100px;
+}
+
+.home .acvitity {
+    margin-left: 4px;
 }
