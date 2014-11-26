@@ -1,9 +1,9 @@
-<div class="categories index">
+<div class="users index">
 
     <div class="row">
         <div class="col-md-12">
             <div class="page-header">
-                <h1><?php echo __('Categories'); ?></h1>
+                <h1><?php echo __('Users'); ?></h1>
             </div>
         </div>
         <!-- end col md 12 -->
@@ -19,8 +19,7 @@
                     <div class="panel-heading"><?php echo __('Actions') ?></div>
                     <div class="panel-body">
                         <ul class="nav nav-pills nav-stacked">
-                            <li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;New Category'), array('action' => 'detail_category'), array('escape' => false)); ?></li>
-
+                            <li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;New User'), array('action' => 'detail_user'), array('escape' => false)); ?></li>
                         </ul>
                     </div>
                     <!-- end body -->
@@ -36,24 +35,25 @@
                 <thead>
                 <tr>
                     <th><?php echo $this->Paginator->sort('id'); ?></th>
-                    <th><?php echo $this->Paginator->sort('category_name'); ?></th>
-                    <th><?php echo $this->Paginator->sort('description'); ?></th>
+                    <th><?php echo $this->Paginator->sort('user_name'); ?></th>
+                    <th><?php echo $this->Paginator->sort('email'); ?></th>
+                    <th><?php echo $this->Paginator->sort('avatar'); ?></th>
                     <th><?php echo $this->Paginator->sort('created'); ?></th>
                     <th><?php echo $this->Paginator->sort('modified'); ?></th>
                     <th class="actions"></th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($categories as $category): ?>
+                <?php foreach ($users as $user): ?>
                     <tr>
-                        <td><?php echo h($category['Category']['id']); ?>&nbsp;</td>
-                        <td><?php echo h($category['Category']['category_name']); ?>&nbsp;</td>
-                        <td><?php echo h($category['Category']['description']); ?>&nbsp;</td>
-                        <td><?php echo h($category['Category']['created']); ?>&nbsp;</td>
-                        <td><?php echo h($category['Category']['modified']); ?>&nbsp;</td>
+                        <td><?php echo h($user['User']['id']); ?>&nbsp;</td>
+                        <td><?php echo h($user['User']['user_name']); ?>&nbsp;</td>
+                        <td><?php echo h($user['User']['email']); ?>&nbsp;</td>
+                        <td><?php echo h($user['User']['created']); ?>&nbsp;</td>
+                        <td><?php echo h($user['User']['modified']); ?>&nbsp;</td>
                         <td class="actions">
-                            <?php echo $this->Html->link('<span class="glyphicon glyphicon-edit"></span>', array('action' => 'detail_category', $category['Category']['id']), array('escape' => false)); ?>
-                            <?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'delete_category', $category['Category']['id']), array('escape' => false), __('Are you sure you want to delete category # %s?', $category['Category']['id'])); ?>
+                            <?php echo $this->Html->link('<span class="glyphicon glyphicon-edit"></span>', array('action' => 'detail_user', $user['User']['id']), array('escape' => false)); ?>
+                            <?php echo $this->Form->postLink('<span class="glyphicon glyphicon-remove"></span>', array('action' => 'delete_user', $user['User']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $user['User']['user_name'])); ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
