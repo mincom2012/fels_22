@@ -6,14 +6,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="home"><?php echo __('Home') ?> </a>
+            <a class="navbar-brand" href="/admin/index"><?php echo __('Home') ?> </a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="view_word"><?php echo __('Word') ?></a></li>
-                <li><a href="view_category"><?php echo __('Categories') ?></a></li>
-                <li><a href="view_result"><?php echo __('Result') ?></a></li>
-                <li><a href="view_user"><?php echo __('User') ?></a></li>
+                <li><a href="/admin/view_word"><?php echo __('Word') ?></a></li>
+                <li><a href="/admin/view_category"><?php echo __('Categories') ?></a></li>
+                <li><a href="/admin/view_user"><?php echo __('User') ?></a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->

@@ -3,3 +3,14 @@
     float: right;
     font-weight: bold;
 }
+
+.img-thumb-100 {
+    width: 350px;
+    float: right;
+}
+
+.title-header-answer {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px
+}
