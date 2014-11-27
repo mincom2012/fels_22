@@ -10,8 +10,6 @@ App::uses('AppModel', 'Model');
  */
 class Lesson extends AppModel {
 
-    public $primaryKey ="lesson_id";
-
 /**
  * Validation rules
  *

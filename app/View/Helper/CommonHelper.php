@@ -31,5 +31,9 @@ class CommonHelper extends AppHelper {
         return $page;
 
     }
+
+    public function resultLesson($result) {
+        return __("%s/20", $result);
+    }
 }
 

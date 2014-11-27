@@ -50,6 +50,37 @@
 
             <?php echo $this->Form->end() ?>
 
+            <?php if ($this->request->data != null): ?>
+
+                <div class="clear">
+                    <hr>
+                    <h2><?php echo __('Lesson related') ?></h2></div>
+
+                <table cellpadding="0" cellspacing="0" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th><?php echo __('lesson'); ?></th>
+                        <th><?php echo __('result'); ?></th>
+                        <th><?php echo __('created'); ?></th>
+                        <th><?php echo __('modified'); ?></th>
+                        <th class="actions"></th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <?php foreach ($this->request->data['Lesson'] as $lesson): ?>
+                        <tr>
+                            <td><?php echo h($lesson['Category']['category_name']); ?>&nbsp;</td>
+                            <td><?php echo h($this->Common->resultLesson($lesson['result'])); ?>&nbsp;</td>
+                            <td><?php echo h($lesson['created']); ?>&nbsp;</td>
+                            <td><?php echo h($lesson['modified']); ?>&nbsp;</td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+
+            <?php endif; ?>
+
         </div>
         <!-- end col md 12 -->
     </div>

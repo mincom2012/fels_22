@@ -14,7 +14,7 @@ class ManagerController extends AppController {
     public $components = array('Paginator', 'Upload');
 
     public function index() {
-         $this->redirect(array('controller' => 'Manager', 'action' => 'view_category'));
+        $this->redirect(array('controller' => 'Manager', 'action' => 'view_category'));
     }
 
     public function view_category() {
@@ -24,7 +24,6 @@ class ManagerController extends AppController {
     }
 
     public function detail_category($id = null) {
-
         if ($this->request->is(array('post', 'put'))) {
             if (!$id) {
                 $this->Category->create();
@@ -64,8 +63,6 @@ class ManagerController extends AppController {
         }
         return $this->redirect(array('controller' => 'Manager', 'action' => 'view_category'));
     }
-
-    //    implement word
 
     public function view_word() {
         $this->Word->recursive = 0;
@@ -111,7 +108,6 @@ class ManagerController extends AppController {
     public function delete_word($id) {
         $this->Word->id = $id;
         if (!$this->Word->exists()) {
-            //throw new NotFoundException(__('Invalid word'));
             return $this->redirect(array('controller' => 'Manager', 'action' => 'view_word'));
         }
         $this->request->onlyAllow('post', 'delete');
@@ -122,7 +118,6 @@ class ManagerController extends AppController {
         }
         return $this->redirect(array('controller' => 'Manager', 'action' => 'view_word'));
     }
-
 
     public function view_user() {
         $this->User->recursive = 0;
@@ -158,8 +153,9 @@ class ManagerController extends AppController {
 
         $titlePage = __('Add User');
         if ($id) {
-            $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
-            $this->request->data = $this->User->find('first', $options);
+            $this->User->recursive = 2;
+            $this->request->data = $this->User->findByid($id);
+
             $titlePage = __('Edit User');
         }
 

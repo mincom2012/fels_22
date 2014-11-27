@@ -8,7 +8,6 @@
         </div>
     </div>
 
-
     <div class="row">
         <div class="col-md-3">
             <div class="actions">
@@ -38,15 +37,13 @@
             </div>
 
             <!--Answer-->
-
             <div class="title-header-answer"><?php echo __('List Answer'); ?></div>
             <?php for ($i = 0; $i < 4; $i++): ?>
                 <?php echo $this->Form->input('Answer.' . $i . '.answer', array('label' => 'Answer ' . ($i + 1), 'class' => 'form-control', 'placeholder' => 'Answer')); ?>
 
                 <?php
                 echo $this->Form->hidden('Answer.' . $i . '.id');
-                $value = $this->request->data != null ? $this->request->data['Answer'][$i]['is_correct'] : 0;
-                $attributes = array('div' => true, 'label' => 'Is answer true', 'type' => 'checkbox', 'options' => array());
+                $attributes = array('div' => true, 'label' => __('Is answer true'), 'type' => 'checkbox', 'options' => array());
                 echo $this->Form->input('Answer.' . $i . '.is_correct', $attributes);
                 ?>
 
